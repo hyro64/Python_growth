@@ -55,6 +55,10 @@ class Admin(User):
 		while self.Privalages:
 			current_Privalages = self.Privalages.pop()
 			print("\t\t" + current_Privalages + ".")
+			
+class Privileges():
+	"""A simple attempt to model a battery for an electric car."""
+	def __init__()
 		
 		
 admin1 = Admin("kate",
