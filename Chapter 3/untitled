@@ -1,0 +1,2 @@
+names = ["James","Joey","Hawkeye","Honeydew"]
+print(name(0))

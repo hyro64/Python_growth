@@ -1,8 +1,5 @@
 class User(object):	#object is used to make sure that python can use super
-	"""
-	Stores user related information
-	"""
-	
+	"""Stores user related information"""
 	def __init__(self,first_name,last_name,DOB,location,gender):
 		""""""
 		self.first_name = first_name
@@ -13,9 +10,7 @@ class User(object):	#object is used to make sure that python can use super
 		self.login_attempts = 0
 ########################################################################
 	def describe_user(self):
-		"""
-		Prints user infomation
-		"""
+		"""Prints user infomation"""
 		print("User info: ")
 		print("\t-" + self.first_name.title())
 		print("\t-" + self.last_name.title())
@@ -24,9 +19,7 @@ class User(object):	#object is used to make sure that python can use super
 		print("\t-" + self.gender.title())
 ########################################################################
 	def greet_user(self):
-		"""
-		Displays a personalized message for the user
-		"""
+		"""Displays a personalized message for the user"""
 		print("Hello " + self.first_name.title() + ". How are you?")
 ########################################################################
 	def increment_login_attempts(self):
@@ -40,33 +33,34 @@ class User(object):	#object is used to make sure that python can use super
 		self.login_attempts = 0
 ########################################################################
 
-class Admin(User):
+class Admin(User): #This class is a model for an admin
 	def __init__(self,first_name,last_name,DOB,location,gender):
-		super(Admin,self).__init__(first_name,last_name,DOB,location,gender)
 		"""Admin,self above are used to make sure super can be used"""
+		super(Admin,self).__init__(first_name,last_name,DOB,location,gender)
+		self.privileges = Privileges() 
+########################################################################			
+class Privileges(): #This class show the privilages of a user
+	"""A simple attempt to model privilages for a user."""
+	def __init__(self):
 		self.Privalages = ["can add post",
 							"can delete post",
 							"can ban users",
 							]
-	def show_privalages(self):
+	def show_privileges(self):
 		"""Show the privalages that the user can use."""
-		self.greet_user()
 		print("The above user: ")
 		while self.Privalages:
 			current_Privalages = self.Privalages.pop()
-			print("\t\t" + current_Privalages + ".")
-			
-class Privileges():
-	"""A simple attempt to model a battery for an electric car."""
-	def __init__()
-		
-		
-admin1 = Admin("kate",
+			print("\t    " + current_Privalages + ".")
+########################################################################			
+admin = Admin("kate",
 			"mcDonald",
 			"08.12.1980",
 			"lakewood",
 			"female"
 			)
-
-admin1.show_privalages()
-admin1.describe_user()
+########################################################################
+"""The class below calls the class methods described above."""
+admin.describe_user()
+admin.privileges.show_privileges()
+admin.greet_user()

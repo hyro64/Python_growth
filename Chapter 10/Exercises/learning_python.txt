@@ -1,0 +1,3 @@
+In python you can read data into the memory.
+In python you can with data that is read in to the memory you rewrite the data.
+In python you can query if the data holds certain values. 
